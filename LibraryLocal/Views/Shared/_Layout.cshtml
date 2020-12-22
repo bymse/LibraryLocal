@@ -1,0 +1,28 @@
+@model LibraryLocal.Modules.IPageTitleContainer
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>@Model.Title</title>
+    <link rel="stylesheet" href="/front/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/front/main.css" media="screen">
+    <meta name="generator" content="Nicepage 3.2.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="/front/google-fonts.css">
+    <meta name="theme-color" content="#478ac9">
+</head>
+<body class="u-body">
+@{
+    await Html.RenderPartialAsync("~/Views/Directory/Header.cshtml");
+}
+
+<section class="u-align-center u-clearfix u-section-1" id="carousel_4787">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-expanded-width u-table u-table-responsive u-table-1">
+            @RenderBody()
+        </div>
+    </div>
+</section>
+</body>
+</html>
