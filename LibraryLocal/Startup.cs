@@ -42,7 +42,7 @@ namespace LibraryLocal
             }
 
             app.UseRewriter(new RewriteOptions()
-                .AddRedirect("^$", "/files"));
+                .AddRedirect("^$", "/files/ru"));
 
             app.UseFileServer(new FileServerOptions
             {
