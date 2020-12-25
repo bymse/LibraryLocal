@@ -42,7 +42,10 @@ namespace LibraryLocal
             }
 
             app.UseRewriter(new RewriteOptions()
-                .AddRedirect("^$", "/files/ru"));
+                .AddRedirect("^$", "/files/ru")
+                .AddRewrite("^favicon.ico", "/front/favicon.ico", true)
+                )
+                ;
 
             app.UseFileServer(new FileServerOptions
             {

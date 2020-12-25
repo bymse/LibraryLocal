@@ -36,3 +36,19 @@
 .u-link.back-link:hover{
     color: #E5E8E8;
 }
+
+th.th-book-link,
+td.td-book-link{
+  padding: 0;
+}
+
+.book-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.book-link:hover {
+  background: rgba(0,0,0,0.04);
+}

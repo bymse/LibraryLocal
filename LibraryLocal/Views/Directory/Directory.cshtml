@@ -6,10 +6,10 @@
 <table class="u-table-entity u-table-entity-1">
     <thead class="u-custom-font u-font-courier-new u-palette-4-base u-table-header u-table-header-1">
     <tr style="height: 58px;">
-        <th class="u-table-cell">
+        <th class="u-table-cell th-book-link">
             @if(Model.BackLink != null)
             {
-                <a class="u-link back-link" href="@Model.BackLink" title="Вернуться на уровень выше">Назад</a>
+                <a class="u-link back-link book-link" href="@Model.BackLink" title="Вернуться на уровень выше">Назад</a>
             }
         </th>
     </tr>
@@ -18,8 +18,10 @@
     @foreach (var item in Model.Items)
     {
         <tr>
-            <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell limited-height">
-                <a href="@item.Url" target="@(item.IsFile ? "_blank" : null)">@item.Title</a>
+            <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell limited-height td-book-link">
+                <a class="book-link" href="@item.Url" target="@(item.IsFile ? "_blank" : null)">
+                    @(item.IsFile ? "-" : ">") @item.Title
+                </a>
             </td>
         </tr>
     }
