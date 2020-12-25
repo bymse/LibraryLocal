@@ -15,7 +15,8 @@ namespace LibraryLocal.Modules
             var items = contents.Select(e => new ItemViewModel()
             {
                 Title = e.Name,
-                Url = Uri.EscapeUriString(basePath  + e.Name)
+                Url = Uri.EscapeUriString(basePath  + e.Name),
+                IsFile = !e.IsDirectory
             }).ToArray();
 
             var pathParts = basePath!.Split("/").Where(e => !string.IsNullOrEmpty(e)).ToArray();

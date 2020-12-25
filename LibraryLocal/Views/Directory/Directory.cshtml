@@ -19,7 +19,7 @@
     {
         <tr>
             <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell limited-height">
-                <a href="@item.Url">@item.Title</a>
+                <a href="@item.Url" target="@(item.IsFile ? "_blank" : null)">@item.Title</a>
             </td>
         </tr>
     }
