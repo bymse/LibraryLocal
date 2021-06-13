@@ -47,18 +47,22 @@ namespace LibraryLocal
                 )
                 ;
 
+
+            var provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".epub"] = "application/epub+zip";
             app.UseFileServer(new FileServerOptions
             {
                 RequestPath = new PathString("/files"),
                 FileProvider = new PhysicalFileProvider(configuration["FilesRootAbsolute"]),
                 EnableDirectoryBrowsing = true,
                 EnableDefaultFiles = true,
-                StaticFileOptions = { ServeUnknownFileTypes = true},
+                StaticFileOptions = { ServeUnknownFileTypes = true, ContentTypeProvider = provider},
                 RedirectToAppendTrailingSlash = true,
                 DirectoryBrowserOptions =
                 {
                     Formatter = new FancyDirectoryFormatter()
-                }
+                },
+                
             });
 
             app.UseStaticFiles(new StaticFileOptions
